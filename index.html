@@ -3,12 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instagram & LinkedIn Bio Formatter — Free Bio Line Break Tool</title>
-  <meta name="description" content="Format your Instagram bio with working line breaks and spacing. Preview exactly how it renders on mobile. Free, instant, no login required." />
-  <meta name="keywords" content="instagram bio line break, instagram bio formatter, linkedin bio formatter, instagram bio spaces, instagram bio template" />
-  <meta property="og:title" content="Instagram & LinkedIn Bio Formatter" />
-  <meta property="og:description" content="Format your Instagram bio with working line breaks. Preview on mobile. Free and instant." />
+  <title>Instagram Bio Line Break Formatter — Fix Spaces & Preview on Mobile | Free</title>
+  <meta name="description" content="Fix Instagram bio line breaks that disappear when you paste. Live mobile phone preview. Copy formatted bio in one click. Also works for LinkedIn. Free, no login." />
+  <meta name="keywords" content="instagram bio line break, instagram bio formatter, how to add spaces in instagram bio, instagram bio line break tool, linkedin bio formatter, instagram bio template, instagram bio spaces" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bio-formatter.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Instagram Bio Line Break Formatter — Fix & Preview for Free" />
+  <meta property="og:description" content="Fix Instagram bio line breaks that disappear when you paste. Live mobile preview. Copy in one click. Works for LinkedIn too." />
+  <meta property="og:url" content="https://bio-formatter.vercel.app/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bio Formatter" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Instagram Bio Line Break Formatter — Free Tool" />
+  <meta name="twitter:description" content="Fix Instagram bio line breaks, preview on mobile, copy in one click. Also works for LinkedIn." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram & LinkedIn Bio Formatter",
+    "url": "https://bio-formatter.vercel.app/",
+    "description": "Format Instagram and LinkedIn bios with working line breaks. Live mobile phone preview. Copy formatted bio instantly.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Instagram bio line break formatter",
+      "LinkedIn About section formatter",
+      "Live mobile phone preview",
+      "Emoji picker",
+      "Bio templates",
+      "Character counter"
+    ]
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
   <style>
     :root {
@@ -481,6 +520,39 @@ They'll work perfectly on Instagram!" oninput="updateAll()"></textarea>
     <div class="tips-grid" id="tips-grid"></div>
   </div>
 
+  <!-- HOW IT WORKS -->
+  <section class="card" style="margin-top:24px" aria-label="How it works">
+    <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:16px">How the Instagram Bio Formatter Works</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+      <div>
+        <div style="font-size:1.5rem;margin-bottom:6px">✍️</div>
+        <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:4px">1. Write your bio</h3>
+        <p style="font-size:0.82rem;color:var(--sub);line-height:1.5">Type or paste your bio. Press Enter where you want line breaks — exactly as you want them to appear on Instagram.</p>
+      </div>
+      <div>
+        <div style="font-size:1.5rem;margin-bottom:6px">📱</div>
+        <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:4px">2. Preview live on mobile</h3>
+        <p style="font-size:0.82rem;color:var(--sub);line-height:1.5">The phone mockup updates in real-time, showing exactly how your bio will look on an iPhone Instagram profile.</p>
+      </div>
+      <div>
+        <div style="font-size:1.5rem;margin-bottom:6px">📋</div>
+        <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:4px">3. Copy formatted bio</h3>
+        <p style="font-size:0.82rem;color:var(--sub);line-height:1.5">Click "Copy Formatted Bio." The tool inserts invisible Unicode characters so Instagram preserves your line breaks when you paste.</p>
+      </div>
+      <div>
+        <div style="font-size:1.5rem;margin-bottom:6px">✅</div>
+        <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:4px">4. Paste into Instagram</h3>
+        <p style="font-size:0.82rem;color:var(--sub);line-height:1.5">Open Instagram → Edit Profile → Bio. Paste the copied text. Your line breaks will appear exactly as you formatted them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="card" style="margin-top:24px" aria-label="FAQ">
+    <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:16px">Frequently Asked Questions</h2>
+    <div id="faq-list" style="display:flex;flex-direction:column;gap:0"></div>
+  </section>
+
   <!-- AD SLOT -->
   <div class="ad-slot">
     Advertisement<br><small>Google AdSense banner will appear here</small>
@@ -721,11 +793,49 @@ const LI_TIPS = [
   { icon: '↩️', title: 'White space is your friend', text: 'Use short paragraphs and line breaks. Dense blocks of text get skimmed or skipped on mobile.' },
 ];
 
+// ── FAQ DATA ──
+const FAQS = [
+  {
+    q: 'Why do my Instagram bio line breaks disappear when I paste?',
+    a: 'Instagram strips plain newline characters when you paste text into the bio field on many devices. This tool inserts an invisible Unicode separator character (U+2063) after each line break. When you paste the formatted text, Instagram sees these characters and preserves the spacing between lines.'
+  },
+  {
+    q: 'How do I add line breaks to my Instagram bio?',
+    a: 'The easiest way: type your bio in this formatter, press Enter where you want line breaks, then click "Copy Formatted Bio" and paste directly into the Instagram bio field on your phone. The invisible characters handle everything automatically.'
+  },
+  {
+    q: 'Does this work on Android and iPhone?',
+    a: 'Yes. The Unicode line break trick works on both Android and iOS Instagram apps. If you experience issues on a specific device, try pasting into your Notes app first, then copy from Notes and paste into Instagram — this method works universally.'
+  },
+  {
+    q: 'How many characters can my Instagram bio be?',
+    a: 'Instagram bios are limited to 150 characters. This includes spaces, emojis (which count as 1–2 characters), and punctuation. The character counter in this tool shows you exactly how many characters you have used and how many remain.'
+  },
+  {
+    q: 'Can I use this for LinkedIn too?',
+    a: 'Yes. Click the LinkedIn tab to switch modes. LinkedIn About sections allow up to 2,600 characters and support standard line breaks, so no Unicode trick is needed. The tool shows a LinkedIn profile card preview and provides LinkedIn-specific templates and tips.'
+  },
+  {
+    q: 'Is my bio text saved or sent to any server?',
+    a: 'No. Everything runs entirely in your browser. Your bio text is never sent to any server, stored in any database, or shared with anyone. This is a 100% client-side tool — you can even use it offline after the page has loaded.'
+  },
+  {
+    q: 'Do emojis count toward the 150-character limit?',
+    a: 'Yes. Most standard emojis count as 1 character each in Instagram\'s character counter, though some complex emojis (like flags or skin-tone variations) may count as 2. The character counter in this tool tracks your count accurately.'
+  },
+  {
+    q: 'What is the best Instagram bio format for getting followers?',
+    a: 'The most effective Instagram bios: (1) state clearly what you do in the first line, (2) include a specific audience or niche, (3) add a social proof element (e.g. "10K+ community"), (4) end with a call-to-action directing people to your link. Use emoji as bullet points to make each line scannable.'
+  }
+];
+
 // ── INIT ──
 window.addEventListener('DOMContentLoaded', () => {
   renderEmojis();
   renderTemplates('creator');
   renderTips();
+  renderFAQ();
+  injectFAQSchema();
 });
 
 function renderEmojis() {
@@ -895,6 +1005,36 @@ function renderTips() {
       <p>${t.text}</p>
     </div>
   `).join('');
+}
+
+// ── FAQ ──
+function renderFAQ() {
+  const list = document.getElementById('faq-list');
+  list.innerHTML = FAQS.map((f, i) => `
+    <details style="border-top:1px solid var(--border);padding:14px 0" ${i === 0 ? 'open' : ''}>
+      <summary style="font-size:0.92rem;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px">
+        ${escapeHtml(f.q)}
+        <span style="font-size:0.75rem;color:var(--sub);flex-shrink:0">▼</span>
+      </summary>
+      <p style="font-size:0.85rem;color:var(--sub);line-height:1.65;margin-top:10px;padding-right:16px">${escapeHtml(f.a)}</p>
+    </details>
+  `).join('');
+}
+
+function injectFAQSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
 }
 
 // ── TOAST ──

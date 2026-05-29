@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bio-formatter.vercel.app/sitemap.xml
